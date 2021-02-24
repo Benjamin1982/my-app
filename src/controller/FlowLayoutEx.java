@@ -58,6 +58,10 @@ public class FlowLayoutEx extends JFrame
          parent.add(child);
          child = new DefaultMutableTreeNode("Ace Ventura");
          parent.add(child);
+         
+         
+         root.add(parent);
+         parent = new DefaultMutableTreeNode("EMPTY_NODE");
          root.add(parent);
         JTree tree = new JTree(root);
         util.expandAllNodes(tree,0, tree.getRowCount());
