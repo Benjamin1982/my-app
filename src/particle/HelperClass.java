@@ -1,5 +1,7 @@
 package particle;
 
+import javax.swing.JTree;
+
 public class HelperClass 
 {	
 	private double myFirstDouble = 5.0; // version of this class
@@ -32,6 +34,17 @@ public class HelperClass
 		{
 			System.out.println(this.others[x]);
 		}
+	}
+	
+	//expand all nodes on startup
+	private void expandAllNodes(JTree tree, int startingIndex, int rowCount){
+	    for(int i=startingIndex;i<rowCount;++i){
+	        tree.expandRow(i);
+	    }
+
+	    if(tree.getRowCount()!=rowCount){
+	        expandAllNodes(tree, rowCount, tree.getRowCount());
+	    }
 	}
 	
 }

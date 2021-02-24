@@ -10,6 +10,7 @@ import controller.FlowLayoutEx;
 public class MainClass
 {
 
+	private static String inp;
 	public static void main(String[] args)   throws Exception 
 	{
 		 HelperClass hc =new HelperClass("Some test output here .."); // why not static 
@@ -26,7 +27,27 @@ public class MainClass
 		 UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		        EventQueue.invokeLater(() -> 
 		        {
-		            FlowLayoutEx ex = new FlowLayoutEx();
+		        	try
+		        	{
+		        	if(args[0]!=null)
+		        	{
+		        		inp = args[0];
+		        	}
+		        	else
+		        	{
+		        		inp = "MAEDLER";
+		        	}
+		        	}
+		        	catch(Exception u){
+		        		// second channel;
+		        		inp = "MAEDLER";
+		        		
+		        	}
+		        	finally
+		        	{
+		        		
+		        	}
+		            FlowLayoutEx ex = new FlowLayoutEx(inp);
 		            ex.setVisible(true);
 		        });
 		    
