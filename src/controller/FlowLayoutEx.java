@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
 
 import particle.Vehicle;
 
@@ -24,13 +26,13 @@ public class FlowLayoutEx extends JFrame
     {
 
     	JPanel panel = new JPanel();
-
+    	DefaultMutableTreeNode root, parent, child, node;
+    	TreePath tp  ;
       
 
         JTree tree = new JTree();
         tree.add(new Vehicle());
         panel.add(tree);
-
         JTextArea area = new JTextArea("Commando(s):");
         area.setPreferredSize(new Dimension(260,200));
         panel.setPreferredSize(new Dimension(400, 230));
@@ -41,9 +43,10 @@ public class FlowLayoutEx extends JFrame
 
         pack();
 
-        setTitle("Fleet Manager Console");
+        setTitle("                Fleet Manager Console");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
   
